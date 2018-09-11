@@ -8,7 +8,7 @@
 
         <transition name="alert-in" enter-active-class="animated flipInX" leave-active-class="animated flipOutX">
           <p class="alert" v-if="errors.has('skill')"> {{ errors.first('skill') }} </p>
-        </transition>>
+        </transition>
       </form>
 
       <!-- this displays the list of skills possessed to the UI -->
@@ -16,6 +16,7 @@
         <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
           <li v-for="(data, index) in skills" :key='index'>
             {{ data.skill }}
+            <i class="fa fa-minus-circle" v-on:click="removeSkill(index)"></i>
           </li>
         </transition-group>
       </ul>
@@ -45,11 +46,12 @@ export default {
         if (result) {
           this.skills.push({ 'skill': this.skill });
           this.skill = '';
-        } else {
-          console.log('Not valid input'); // TODO: write something better for the UI to alert this to the user
         }
       });
-    }, // TODO: write a method to remove skills from the existing list on the UI
+    },
+    removeSkill(id) {
+      this.skills.splice(id, 1);
+    }
   }
 }
 </script>
@@ -57,6 +59,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css";
+  @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
   .holder {
     background: #fff
@@ -110,6 +113,11 @@ export default {
 
   .alert-in-leave-active {
     animation: bounce-in .5s reverse;
+  }
+  
+  i {
+    float: right;
+    cursor: pointer;
   }
 
   @keyframes bounce-in {
