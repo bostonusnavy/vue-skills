@@ -2,6 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link>
+      <router-link to='/skills'>Skills</router-link>
       <router-link to="/about">About</router-link>
     </nav>
 
@@ -10,12 +11,16 @@
 </template>
 
 <script>
-import Skills from './components/Skills.vue'
+import Home from './components/Home.vue';
+import Skills from './components/Skills.vue';
+import About from './components/About.vue';
 
 export default {
   name: 'app',
   components: {
-    Skills
+    Home,
+    Skills,
+    About
   }
 }
 </script>

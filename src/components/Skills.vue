@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="skills">
     <div class="holder">
 
       <!-- this displays an input where data submitted gets added to the skills possessed list -->
