@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <h1>Hello {{ userName }}. This is an About page.</h1>
+        <h1>Hello! This is an About page.</h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipiscing elit proin ridiculus morbi tincidunt egestas sagittis penatibus etiam lobortis, per ultricies nec felis nullam habitant non suscipit placerat mi iaculis aptent id sociosqu. Cum duis risus luctus velit venenatis integer vestibulum potenti, pellentesque neque taciti posuere litora tellus vel, auctor dapibus faucibus platea erat ut leo. Facilisis nascetur ornare nisi posuere at ad potenti mauris, suspendisse primis platea sociosqu cursus dictumst dui hendrerit, montes est molestie litora taciti nam malesuada.
         </p>
@@ -13,11 +13,5 @@
 <script>
     export default {
         name: 'About',
-        data() {
-            return {
-                userName: this.$route.params.name,
-            };
-        },
     };
 </script>
-
